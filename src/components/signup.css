@@ -1,0 +1,156 @@
+.signup-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-top: var(--dl-space-space-sixunits);
+  padding-left: 0px;
+  padding-right: 0px;
+  flex-direction: row;
+  padding-bottom: var(--dl-space-space-sixunits);
+  background-size: cover;
+  justify-content: center;
+  background-image: url("/orange%20minimalist%20modern%20warm%20blur%20gradient%20non%20profit%20presentation-1500w.jpg");
+}
+.signup-max-width {
+  gap: var(--dl-space-space-twounits);
+  width: 100%;
+  display: flex;
+  opacity: 1;
+  padding: 0px;
+  z-index: 100;
+  align-self: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.signup-form-root {
+  gap: var(--dl-space-space-unit);
+  width: 600px;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  max-width: 600px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.signup-form {
+  gap: var(--dl-space-space-oneandhalfunits);
+  width: 80%;
+  height: auto;
+  display: flex;
+  align-self: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-bottom: var(--dl-space-space-twounits);
+  justify-content: flex-end;
+}
+.signup-form1 {
+  gap: var(--dl-space-space-unit);
+  width: 100%;
+  height: 245px;
+  display: flex;
+  flex-direction: column;
+}
+.signup-email {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.signup-text {
+  color: #ffffff;
+}
+.signup-textinput {
+  width: 100%;
+  border-color: #C8F06A;
+  background-color: transparent;
+}
+.signup-password {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.signup-container1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.signup-text1 {
+  color: #ffffff;
+}
+.signup-hide-password {
+  gap: var(--dl-space-space-halfunit);
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+  justify-content: center;
+}
+.signup-icon {
+  fill: #ffffff;
+  width: 24px;
+  height: 24px;
+}
+.signup-text2 {
+  color: #ffffff;
+}
+.signup-textinput1 {
+  width: 100%;
+  border-color: #C8F06A;
+  background-color: transparent;
+}
+.signup-text3 {
+  color: rgb(255, 255, 255);
+}
+.signup-textinput2 {
+  width: 100%;
+  border-color: #C8F06A;
+  background-color: transparent;
+}
+.signup-container2 {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding-top: var(--dl-space-space-threeunits);
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.signup-button {
+  width: var(--dl-size-size-medium);
+  align-self: center;
+  text-decoration: none;
+  background-color: #C8F06A;
+}
+.signup-text4 {
+  fill: var(--dl-color-theme-neutral-dark);
+  color: var(--dl-color-theme-neutral-dark);
+  text-align: center;
+  font-family: "Arial";
+}
+.signup-root-class-name {
+  height: 100%;
+}
+@media(max-width: 991px) {
+  .signup-form-root {
+    width: 100%;
+  }
+}
+@media(max-width: 479px) {
+  .signup-form-root {
+    padding: 0px;
+  }
+  .signup-button {
+    width: 100%;
+  }
+}

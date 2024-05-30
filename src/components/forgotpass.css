@@ -1,0 +1,111 @@
+.forgotpass-container {
+  width: 100%;
+  height: 769px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-top: var(--dl-space-space-sixunits);
+  padding-left: 0px;
+  padding-right: 0px;
+  flex-direction: row;
+  padding-bottom: var(--dl-space-space-sixunits);
+  background-size: cover;
+  justify-content: center;
+  background-image: url("/orange%20minimalist%20modern%20warm%20blur%20gradient%20non%20profit%20presentation-1500w.jpg");
+}
+.forgotpass-max-width {
+  gap: var(--dl-space-space-twounits);
+  width: 100%;
+  display: flex;
+  opacity: 1;
+  padding: 0px;
+  z-index: 100;
+  align-self: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.forgotpass-form-root {
+  gap: var(--dl-space-space-unit);
+  width: 600px;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  max-width: 600px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--dl-radius-radius-radius4);
+  justify-content: center;
+}
+.forgotpass-form {
+  gap: var(--dl-space-space-oneandhalfunits);
+  width: 80%;
+  height: auto;
+  display: flex;
+  align-self: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-bottom: var(--dl-space-space-sixunits);
+  justify-content: flex-end;
+}
+.forgotpass-form1 {
+  gap: var(--dl-space-space-unit);
+  width: 100%;
+  height: 123px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.forgotpass-email {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-self: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.forgotpass-text {
+  color: #ffffff;
+  padding-top: var(--dl-space-space-unit);
+}
+.forgotpass-textinput {
+  width: 100%;
+  border-color: #C8F06A;
+  background-color: transparent;
+}
+.forgotpass-container1 {
+  gap: var(--dl-space-space-halfunit);
+  width: 100%;
+  height: 68px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: var(--dl-space-space-twounits);
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.forgotpass-button {
+  width: auto;
+  align-self: center;
+  text-decoration: none;
+  background-color: #C8F06A;
+}
+.forgotpass-text1 {
+  fill: var(--dl-color-theme-neutral-dark);
+  color: var(--dl-color-theme-neutral-dark);
+  text-align: center;
+  font-family: "Arial";
+}
+
+@media(max-width: 991px) {
+  .forgotpass-form-root {
+    width: 100%;
+  }
+}
+@media(max-width: 479px) {
+  .forgotpass-form-root {
+    padding: 0px;
+  }
+  .forgotpass-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,36 @@
+.gallery4-container2 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: var(--dl-space-space-unit);
+  justify-content: center;
+}
+
+.gallery4-text2 {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-family: "Arial";
+}
+
+.select_option {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.select_circle {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.select_circle_active {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}

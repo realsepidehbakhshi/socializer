@@ -1,0 +1,115 @@
+.gallery4-gallery3 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.gallery4-max-width {
+  gap: var(--dl-space-space-threeunits);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.gallery4-container {
+  gap: var(--dl-space-space-oneandhalfunits);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.gallery4-content {
+  gap: var(--dl-space-space-oneandhalfunits);
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.gallery4-container1 {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery4-image1 {
+  width: 599px;
+  height: 386px;
+  max-width: 100%;
+  align-self: center;
+}
+.gallery4-section-title {
+  gap: var(--dl-space-space-oneandhalfunits);
+  width: auto;
+  display: flex;
+  max-width: 800px;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.gallery4-text {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Arial";
+}
+.gallery4-text1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.gallery4-text3 {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-family: "Arial";
+  margin-left: var(--dl-space-space-unit);
+  margin-right: var(--dl-space-space-fourunits);
+}
+.gallery4-text4 {
+  color: #ffffff;
+  font-size: 22px;
+  font-family: "Arial";
+  margin-left: var(--dl-space-space-unit);
+}
+.gallery4-button {
+  width: var(--dl-size-size-medium);
+  align-self: center;
+  text-decoration: none;
+  background-color: #c8f06a;
+}
+.gallery4-text5 {
+  fill: var(--dl-color-theme-neutral-dark);
+  color: var(--dl-color-theme-neutral-dark);
+  text-align: center;
+  font-family: "Arial";
+}
+@media (max-width: 991px) {
+  .gallery4-content {
+    align-items: center;
+    flex-direction: column;
+  }
+  .gallery4-image1 {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+}
+@media (max-width: 767px) {
+  .gallery4-section-title {
+    gap: var(--dl-space-space-oneandhalfunits);
+  }
+}
+@media (max-width: 479px) {
+  .gallery4-gallery3 {
+    padding: var(--dl-space-space-oneandhalfunits);
+  }
+  .gallery4-button {
+    width: 100%;
+  }
+}
