@@ -82,13 +82,9 @@ const Signup = (props) => {
               />
             </form>
             <div className="signup-container2">
-              <Link
-                to="/"
-                autoFocus="true"
-                className="signup-button thq-button-filled"
-              >
-                <span className="signup-text4 thq-body-small">Sign In</span>
-              </Link>
+              <div className="signup-button thq-button-filled">
+                <span className="signup-text4 thq-body-small">Sign Up</span>
+              </div>
             </div>
           </div>
         </div>

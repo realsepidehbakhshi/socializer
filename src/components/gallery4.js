@@ -7,51 +7,30 @@ import "./gallery4.css";
 import RadioSelect from "./RadioSelect";
 
 const Gallery4 = (props) => {
+  const { data } = props;
   return (
-    <div className="gallery4-gallery3 thq-section-padding">
+    <div
+      className="gallery4-gallery3 thq-section-padding"
+      style={{ marginTop: -50, paddingBottom: 0 }}
+    >
       <div className="gallery4-max-width thq-section-max-width">
         <div className="gallery4-container">
           <div className="gallery4-content">
             <div className="gallery4-container1">
               <img
-                alt={props.image1Alt}
-                src={props.image1Src}
+                alt={"img"}
+                src={data.img}
                 className="gallery4-image1 thq-img-ratio-16-9"
               />
             </div>
           </div>
         </div>
-        <div className="gallery4-section-title">
-          <h2 className="gallery4-text thq-heading-2">caption</h2>
-          <span className="gallery4-text1 thq-body-large">
-            &quot;My boss loves me so much he wants to keep me working on
-            weekends without pay&quot;
-          </span>
+        <div className="content-holder">
+          <div className="gallery4-section-title">
+            <span className="gallery4-text1 thq-body-large">{data.text}</span>
+          </div>
+          <RadioSelect data={data.radioOptions} />
         </div>
-        <RadioSelect
-          data={[
-            {
-              label: "Happy ",
-              value: "happy ",
-            },
-            {
-              label: "Sad ",
-              value: "sad ",
-            },
-            {
-              label: "Angry",
-              value: "angry",
-            },
-          ]}
-        />
-
-        <Link
-          to="/"
-          autoFocus="true"
-          className="gallery4-button thq-button-filled"
-        >
-          <span className="gallery4-text5 thq-body-small">Next</span>
-        </Link>
       </div>
     </div>
   );

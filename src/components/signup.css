@@ -67,7 +67,7 @@
 }
 .signup-textinput {
   width: 100%;
-  border-color: #C8F06A;
+  border-color: #c8f06a;
   background-color: transparent;
 }
 .signup-password {
@@ -106,7 +106,7 @@
 }
 .signup-textinput1 {
   width: 100%;
-  border-color: #C8F06A;
+  border-color: #c8f06a;
   background-color: transparent;
 }
 .signup-text3 {
@@ -114,7 +114,7 @@
 }
 .signup-textinput2 {
   width: 100%;
-  border-color: #C8F06A;
+  border-color: #c8f06a;
   background-color: transparent;
 }
 .signup-container2 {
@@ -127,10 +127,9 @@
   justify-content: flex-end;
 }
 .signup-button {
-  width: var(--dl-size-size-medium);
   align-self: center;
   text-decoration: none;
-  background-color: #C8F06A;
+  background-color: #c8f06a;
 }
 .signup-text4 {
   fill: var(--dl-color-theme-neutral-dark);
@@ -141,12 +140,12 @@
 .signup-root-class-name {
   height: 100%;
 }
-@media(max-width: 991px) {
+@media (max-width: 991px) {
   .signup-form-root {
     width: 100%;
   }
 }
-@media(max-width: 479px) {
+@media (max-width: 479px) {
   .signup-form-root {
     padding: 0px;
   }

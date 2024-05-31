@@ -1,11 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link, useHistory } from "react-router-dom";
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-import './navbar.css'
+import "./navbar.css";
 
 const Navbar = (props) => {
+  const navigate = useHistory();
   return (
     <div className={`navbar-container ${props.rootClassName} `}>
       <header data-thq="thq-navbar" className="navbar-navbar">
@@ -58,9 +59,15 @@ const Navbar = (props) => {
           </div>
         </div>
         <div data-thq="thq-navbar-btn-group" className="navbar-btn-group">
-          <Link to="/login" className="navbar-view button">
+          <div
+            className="navbar-view button"
+            onClick={() => {
+              localStorage.removeItem("token");
+              navigate.push("/login");
+            }}
+          >
             {props.view}
-          </Link>
+          </div>
         </div>
         <div data-thq="thq-burger-menu" className="navbar-burger-menu">
           <button className="button navbar-button">
@@ -128,30 +135,30 @@ const Navbar = (props) => {
         </div>
       </header>
     </div>
-  )
-}
+  );
+};
 
 Navbar.defaultProps = {
-  logo: 'SOCIALIZER',
-  imageAlt: 'image',
-  view: 'Log out',
-  button3: 'Lessons',
-  login: 'Login',
-  register: 'Register',
-  text4: 'Blog',
-  text2: 'Pricing',
-  rootClassName: '',
-  text3: 'Team',
-  button2: 'Tutorial',
-  button: 'Home',
-  text1: 'Features',
-  button4: 'Profile',
-  text: 'About',
+  logo: "SOCIALIZER",
+  imageAlt: "image",
+  view: "Log out",
+  button3: "Lessons",
+  login: "Login",
+  register: "Register",
+  text4: "Blog",
+  text2: "Pricing",
+  rootClassName: "",
+  text3: "Team",
+  button2: "Tutorial",
+  button: "Home",
+  text1: "Features",
+  button4: "Profile",
+  text: "About",
   imageSrc:
-    '/orange_minimalist_modern_warm_blur_gradient_non_profit_presentation__1_-removebg-preview-200h.png',
-  logo1: 'Character',
-  button1: 'Browse scenarios',
-}
+    "/orange_minimalist_modern_warm_blur_gradient_non_profit_presentation__1_-removebg-preview-200h.png",
+  logo1: "Character",
+  button1: "Browse scenarios",
+};
 
 Navbar.propTypes = {
   logo: PropTypes.string,
@@ -172,6 +179,6 @@ Navbar.propTypes = {
   imageSrc: PropTypes.string,
   logo1: PropTypes.string,
   button1: PropTypes.string,
-}
+};
 
-export default Navbar
+export default Navbar;

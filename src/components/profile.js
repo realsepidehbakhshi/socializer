@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import { Line } from "rc-progress";
 
 import "./profile.css";
+import { useSelector } from "react-redux";
+import { selectUserData } from "../redux/slise";
+import { userData } from "../api/user";
 
 const Profile = (props) => {
+  const [user, setUser] = useState({});
+  useEffect(async () => {
+    const result2 = await userData();
+    if (result2 && result2?.status === 200) {
+      setUser(result2?.data);
+    }
+  }, []);
+
   return (
     <div className={`profile-container ${props.rootClassName} `}>
       <div className="profile-container01">
@@ -24,21 +35,17 @@ const Profile = (props) => {
                 Personal information
               </h1>
               <p className="profile-text01 thq-body-large">
-                <span className="profile-text02">Name: </span>
+                <span className="profile-text02">Name: {user?.fullName} </span>
                 <br className="profile-text03"></br>
-                <span className="profile-text04">Email: user@mail.con</span>
+                <span className="profile-text04">Email: {user?.email}</span>
                 <br className="profile-text05"></br>
-                <span className="profile-text06">Age:</span>
+                <span className="profile-text06">Role: {user?.type}</span>
                 <br className="profile-text07"></br>
                 <br className=""></br>
               </p>
               <div className="profile-container05">
                 <div className="profile-container06"></div>
-                <Link
-                  to="/"
-                  autoFocus="true"
-                  className="profile-button thq-button-filled"
-                >
+                <Link to="/" className="profile-button thq-button-filled">
                   <span className="profile-text09 thq-body-small">Edit</span>
                 </Link>
               </div>

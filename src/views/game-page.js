@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from "react";
 
-import Script from 'dangerous-html/react'
-import { Helmet } from 'react-helmet'
+import Script from "dangerous-html/react";
+import { Helmet } from "react-helmet";
 
-import Navbar from '../components/navbar'
-import Gallery4 from '../components/gallery4'
-import './game-page.css'
+import Navbar from "../components/navbar";
+import Gallery4 from "../components/gallery4";
+import "./game-page.css";
+import { gameData } from "../lib/data";
 
 const GamePage = (props) => {
+  const [step, setStep] = useState(1);
   return (
     <div className="game-page-container">
       <Helmet>
@@ -21,13 +23,56 @@ const GamePage = (props) => {
             <span>Choose the right emotion</span>
             <br></br>
           </p>
-          <Gallery4 image1Src="/t%C3%A3%C2%A9l%C3%A3%C2%A9chargement%20(25)-1400w.jpg"></Gallery4>
-        </div>
-        <div className="game-page-buttons">
-          <button className="game-page-view button">START GAME</button>
-          <button className="game-page-learn button-clean button">
-            start tutorial
-          </button>
+          {step === 1 ? (
+            <Gallery4 data={gameData[0]}></Gallery4>
+          ) : step === 2 ? (
+            <Gallery4 data={gameData[1]}></Gallery4>
+          ) : step === 3 ? (
+            <Gallery4 data={gameData[2]}></Gallery4>
+          ) : step === 4 ? (
+            <Gallery4 data={gameData[3]}></Gallery4>
+          ) : step === 5 ? (
+            <Gallery4 data={gameData[4]}></Gallery4>
+          ) : step === 6 ? (
+            <Gallery4 data={gameData[5]}></Gallery4>
+          ) : step === 7 ? (
+            <Gallery4 data={gameData[6]}></Gallery4>
+          ) : step === 8 ? (
+            <Gallery4 data={gameData[7]}></Gallery4>
+          ) : step === 9 ? (
+            <Gallery4 data={gameData[8]}></Gallery4>
+          ) : (
+            <Gallery4 data={gameData[9]}></Gallery4>
+          )}
+          <div style={{ display: "flex", gap: 10 }}>
+            {step > 1 ? (
+              <div
+                className="gallery4-button thq-button-filled"
+                onClick={() => setStep(step - 1)}
+                style={{ height: 42 }}
+              >
+                <span className="gallery4-text5 thq-body-small">Prevoius</span>
+              </div>
+            ) : (
+              ""
+            )}
+            {step !== 10 ? (
+              <div
+                className="gallery4-button thq-button-filled"
+                onClick={() => setStep(step + 1)}
+                style={{ height: 42 }}
+              >
+                <span className="gallery4-text5 thq-body-small">Next</span>
+              </div>
+            ) : (
+              <div
+                className="gallery4-button thq-button-filled"
+                style={{ height: 42 }}
+              >
+                <span className="gallery4-text5 thq-body-small">Submit</span>
+              </div>
+            )}
+          </div>
         </div>
       </section>
       <footer className="game-page-footer">
@@ -173,7 +218,7 @@ const GamePage = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default GamePage
+export default GamePage;
