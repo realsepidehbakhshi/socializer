@@ -20,6 +20,7 @@ import Home from "./views/home";
 import NotFound from "./views/not-found";
 import PrivateRoute from "./PrivateRoutes";
 import FGP from "./views/fgpass";
+import AIGamePage from "./views/ai-game-page";
 
 const App = () => {
   const isAuthenticated = !!localStorage.getItem("token");
@@ -40,6 +41,7 @@ const App = () => {
           }
         />
         <PrivateRoute component={GamePage} exact path="/game-page" />
+        <PrivateRoute component={AIGamePage} exact path="/ai-game-page" />
         <PrivateRoute component={Tutorial} exact path="/tutorial" />
         <PrivateRoute component={Home} exact path="/" />
         <Route component={NotFound} path="**" />

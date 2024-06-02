@@ -2,26 +2,32 @@ export const radioOptions = [
   {
     label: "Anger",
     value: "anger",
+    img: "03furious.gif",
   },
   {
     label: "Disgust",
     value: "disgust",
+    img: "01disg.gif",
   },
   {
     label: "Enjoyment",
     value: "enjoyment",
+    img: "05happy.gif",
   },
   {
     label: "Fear",
     value: "fear",
+    img: "04scared.gif",
   },
   {
     label: "Sadness",
     value: "sadness",
+    img: "02sad.gif",
   },
   {
     label: "Contempt",
     value: "contempt",
+    img: "06contempt.gif",
   },
 ];
 

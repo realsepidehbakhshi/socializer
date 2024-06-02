@@ -36,6 +36,12 @@ export const Footer = () => {
                 browse scenarios
               </Link>
               <Link
+                to="/ai-game-page"
+                className="game-page-link01 button-clean button"
+              >
+                ai practice
+              </Link>
+              <Link
                 className="game-page-link02 button-clean button"
                 to="/tutorial"
               >

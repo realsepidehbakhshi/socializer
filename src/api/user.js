@@ -88,3 +88,19 @@ export const userData = async () => {
     console.log(err);
   }
 };
+
+export const getAIQuestion = async (data) => {
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const res = await http.post(`${http.url}/generate-question`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return res;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};

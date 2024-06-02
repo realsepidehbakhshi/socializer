@@ -38,6 +38,12 @@ const Navbar = (props) => {
                 {props.button1}
               </Link>
               <Link
+                to="/ai-game-page"
+                className="navbar-navlink2 button-clean button"
+              >
+                ai practice
+              </Link>
+              <Link
                 to="/tutorial"
                 className="navbar-navlink3 button-clean button"
               >
