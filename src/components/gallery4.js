@@ -7,7 +7,7 @@ import "./gallery4.css";
 import RadioSelect from "./RadioSelect";
 
 const Gallery4 = (props) => {
-  const { data } = props;
+  const { data, onSelect, currentAnswer } = props;
   return (
     <div
       className="gallery4-gallery3 thq-section-padding"
@@ -29,7 +29,12 @@ const Gallery4 = (props) => {
           <div className="gallery4-section-title">
             <span className="gallery4-text1 thq-body-large">{data.text}</span>
           </div>
-          <RadioSelect data={data.radioOptions} />
+          <RadioSelect
+            data={data.radioOptions}
+            onSelect={onSelect}
+            question_id={data.id}
+            currentAnswer={currentAnswer}
+          />
         </div>
       </div>
     </div>

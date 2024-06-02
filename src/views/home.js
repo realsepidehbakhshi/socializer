@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 
 import Navbar from "../components/navbar";
 import "./home.css";
+import { Footer } from "../components/Footer";
 
 const Home = (props) => {
   return (
@@ -155,88 +156,7 @@ const Home = (props) => {
           </div>
         </div>
       </section>
-      <footer className="home-footer">
-        <div className="home-main3">
-          <div className="home-branding">
-            <div className="home-heading1">
-              <h2 className="home-logo">SOCIALIZER</h2>
-              <p className="home-caption1">
-                A platform designed for helping people with autism or people who
-                struggle with emotional recognition to improve this social skill
-              </p>
-            </div>
-          </div>
-          <div className="home-links">
-            <div className="home-list">
-              <h3 className="home-heading2">Site</h3>
-              <div className="home-items">
-                <button className="home-link button-clean button">home</button>
-                <button className="home-link01 button-clean button">
-                  browse scenarios
-                </button>
-                <button className="home-link02 button-clean button">
-                  Tutorial
-                </button>
-                <button className="home-link03 button-clean button">
-                  <span>
-                    <span>lessons</span>
-                    <br></br>
-                  </span>
-                </button>
-                <button className="home-link04 button-clean button">
-                  profile
-                </button>
-              </div>
-            </div>
-            <div className="home-list1">
-              <h3 className="home-heading3">Creators</h3>
-              <div className="home-items1">
-                <button className="home-link05 button-clean button">
-                  name
-                </button>
-                <button className="home-link06 button-clean button">
-                  name
-                </button>
-                <button className="home-link07 button-clean button">
-                  name
-                </button>
-                <button className="home-link08 button-clean button">
-                  name
-                </button>
-                <button className="home-link09 button-clean button">
-                  name
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="home-socials">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="home-twitter social button"
-            >
-              <img
-                alt="image"
-                src="/Icons/twitter.svg"
-                className="home-image5"
-              />
-            </a>
-            <a
-              href="https://discord.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="home-discord social button"
-            >
-              <img
-                alt="image"
-                src="/Icons/discord.svg"
-                className="home-image6"
-              />
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

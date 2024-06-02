@@ -1,192 +1,99 @@
-export const gameData = [
+export const radioOptions = [
   {
-    id: 0,
-    img: "slide1.jpg",
-    text: "1- My boss loves me so much he wants to keep me working on weekends without pay",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    label: "Anger",
+    value: "anger",
   },
   {
+    label: "Disgust",
+    value: "disgust",
+  },
+  {
+    label: "Enjoyment",
+    value: "enjoyment",
+  },
+  {
+    label: "Fear",
+    value: "fear",
+  },
+  {
+    label: "Sadness",
+    value: "sadness",
+  },
+  {
+    label: "Contempt",
+    value: "contempt",
+  },
+];
+
+export const gameData = [
+  {
     id: 1,
-    img: "slide2.jpg",
-    text: "2- My friend canceled our plans last minute for the third time this month",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    img: "06contempt.gif",
+    text: "1- I walked into my house and saw it was completely redecorated!",
+    radioOptions: radioOptions,
+    answer: "contempt",
   },
   {
     id: 2,
-    img: "slide3.jpg",
-    text: "3- I just got the job I’ve been dreaming of for years!",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    img: "04scared.gif",
+    text: "2- I heard strange noises coming from the basement at night.",
+    radioOptions: radioOptions,
+    answer: "fear",
   },
   {
     id: 3,
-    img: "slide4.jpg",
-    text: "4- I didn’t get the promotion I worked so hard for.",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    img: "06contempt.gif",
+    text: "3- I received a surprise birthday party from my friends!",
+    radioOptions: radioOptions,
+    answer: "contempt",
   },
   {
     id: 4,
-    img: "slide5.jpg",
-    text: "5- My best friend moved back to town after years of being away.",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    img: "01disg.gif",
+    text: "4- I found a bug in my food at the restaurant.",
+    radioOptions: radioOptions,
+    answer: "disgust",
   },
   {
     id: 5,
-    img: "slide6.jpg",
-    text: "6- I lost my wallet with all my cards and cash.",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    img: "03furious.gif",
+    text: "5- The internet has been down all day, and I can’t get any work done.",
+    radioOptions: radioOptions,
+    answer: "anger",
   },
   {
     id: 6,
-    img: "slide7.jpg",
-    text: "7- My project received praise from the entire team.",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    img: "05happy.gif",
+    text: "6- I aced my final exams!",
+    radioOptions: radioOptions,
+    answer: "enjoyment",
   },
   {
     id: 7,
-    img: "slide8.jpg",
-    text: "8- My neighbor keeps making loud noises late at night.",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    img: "02sad.gif",
+    text: "7- I got caught in a downpour without an umbrella.",
+    radioOptions: radioOptions,
+    answer: "sadness",
   },
   {
     id: 8,
-    img: "slide9.jpg",
-    text: "9- I finally completed a marathon after months of training.",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    img: "05happy.gif",
+    text: "8- We just won the championship game!",
+    radioOptions: radioOptions,
+    answer: "enjoyment",
   },
   {
     id: 9,
-    img: "slide10.jpg",
-    text: "10- We just won the championship game!",
-    radioOptions: [
-      {
-        label: "Happy ",
-        value: "happy ",
-      },
-      {
-        label: "Sad ",
-        value: "sad ",
-      },
-      {
-        label: "Angry",
-        value: "angry",
-      },
-    ],
+    img: "03furious.gif",
+    text: "9- My neighbor keeps making loud noises late at night.",
+    radioOptions: radioOptions,
+    answer: "anger",
+  },
+  {
+    id: 10,
+    img: "01disg.gif",
+    text: "10- The garbage hasn't been taken out for days, and the smell is unbearable.",
+    radioOptions: radioOptions,
+    answer: "disgust",
   },
 ];

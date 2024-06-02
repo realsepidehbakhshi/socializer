@@ -19,6 +19,7 @@ import Tutorial from "./views/tutorial";
 import Home from "./views/home";
 import NotFound from "./views/not-found";
 import PrivateRoute from "./PrivateRoutes";
+import FGP from "./views/fgpass";
 
 const App = () => {
   const isAuthenticated = !!localStorage.getItem("token");
@@ -28,6 +29,8 @@ const App = () => {
         <PrivateRoute component={Profile1} exact path="/profile1" />
         <Route component={Lessons} exact path="/lessons" />
         <Route component={ForgotPassword} exact path="/forgot-password" />
+        <Route component={FGP} exact path="/fgpass" />
+
         <Route component={SignUp} exact path="/sign-up" />
         <Route
           exact
@@ -36,9 +39,9 @@ const App = () => {
             isAuthenticated ? <Redirect to="/" /> : <Login {...props} />
           }
         />
-        <Route component={GamePage} exact path="/game-page" />
-        <Route component={Tutorial} exact path="/tutorial" />
-        <Route component={Home} exact path="/" />
+        <PrivateRoute component={GamePage} exact path="/game-page" />
+        <PrivateRoute component={Tutorial} exact path="/tutorial" />
+        <PrivateRoute component={Home} exact path="/" />
         <Route component={NotFound} path="**" />
         <Redirect to="**" />
       </Switch>

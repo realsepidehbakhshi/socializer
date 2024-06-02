@@ -88,9 +88,10 @@
 .game-page-branding {
   gap: var(--dl-space-space-threeunits);
   display: flex;
-  max-width: 600px;
+  max-width: 500px;
   align-items: flex-start;
   flex-direction: column;
+  line-height: 25px;
 }
 .game-page-heading1 {
   gap: var(--dl-space-space-threeunits);
@@ -105,7 +106,7 @@
   color: rgb(255, 255, 255);
 }
 .game-page-links {
-  gap: 120px;
+  gap: 35px;
   display: flex;
   align-items: flex-start;
   flex-direction: row;
@@ -144,6 +145,7 @@
   color: rgb(255, 255, 255);
 }
 .game-page-list1 {
+  width: 300px;
   gap: var(--dl-space-space-threeunits);
   display: flex;
   align-items: flex-start;

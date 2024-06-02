@@ -1,6 +1,5 @@
 .forgotpass-container {
   width: 100%;
-  height: 769px;
   display: flex;
   position: relative;
   align-items: center;
@@ -70,7 +69,7 @@
 }
 .forgotpass-textinput {
   width: 100%;
-  border-color: #C8F06A;
+  border-color: #c8f06a;
   background-color: transparent;
 }
 .forgotpass-container1 {
@@ -87,7 +86,7 @@
   width: auto;
   align-self: center;
   text-decoration: none;
-  background-color: #C8F06A;
+  background-color: #c8f06a;
 }
 .forgotpass-text1 {
   fill: var(--dl-color-theme-neutral-dark);
@@ -96,12 +95,12 @@
   font-family: "Arial";
 }
 
-@media(max-width: 991px) {
+@media (max-width: 991px) {
   .forgotpass-form-root {
     width: 100%;
   }
 }
-@media(max-width: 479px) {
+@media (max-width: 479px) {
   .forgotpass-form-root {
     padding: 0px;
   }

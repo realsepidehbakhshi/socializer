@@ -1,73 +1,101 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
-import PropTypes from 'prop-types'
+import Navbar from "../components/navbar";
+import PropTypes from "prop-types";
 
-import Logos6 from './logos6'
-import './forgotpass.css'
+import Logos6 from "./logos6";
+import "./forgotpass.css";
+import { setNP } from "../api/user";
 
 const Forgotpass = (props) => {
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+
+  const setPassword = async () => {
+    if (oldPassword === "" || newPassword === "") {
+      alert("Please fill the form first");
+      return;
+    }
+    const res = await setNP({
+      oldPassword: oldPassword,
+      newPassword: newPassword,
+    });
+    if (res && res.status === 200) {
+      alert("success");
+    } else {
+      alert("Old password is wrong");
+    }
+  };
+
   return (
-    <div
-      className={`forgotpass-container thq-section-padding ${props.rootClassName} `}
-    >
-      <div className="forgotpass-max-width thq-section-max-width thq-section-padding">
-        <div className="forgotpass-form-root">
-          <div className="forgotpass-form">
-            <Logos6
-              logo1Src="/socializer%20logo-200h.png"
-              logo2Src="/socializer%20logo-200h.png"
-              logo3Src="/socializer%20logo-200h.png"
-              logo4Src="/socializer%20logo-200h.png"
-              logo5Src="/socializer%20logo-200h.png"
-              logo6Src="/socializer%20logo-200h.png"
-              logo7Src="/socializer%20logo-200h.png"
-              rootClassName="logos6-root-class-name2"
-              className=""
-            ></Logos6>
-            <form className="forgotpass-form1">
-              <div className="forgotpass-email">
-                <label
-                  htmlFor="thq-sign-in-1-password"
-                  className="forgotpass-text thq-body-large"
+    <>
+      <Helmet>
+        <title>set new passwpod - Socializer</title>
+        <meta property="og:title" content="game-page - Socializer" />
+      </Helmet>
+      <Navbar rootClassName="navbar-root-class-name2"></Navbar>
+      <div className={`forgotpass-container `}>
+        <div className="forgotpass-max-width thq-section-max-width thq-section-padding">
+          <div className="forgotpass-form-root">
+            <div className="forgotpass-form">
+              <form className="forgotpass-form1">
+                <div className="forgotpass-email">
+                  <label
+                    htmlFor="thq-sign-in-1-password"
+                    className="forgotpass-text thq-body-large"
+                  >
+                    Old password
+                  </label>
+                  <input
+                    type="password"
+                    id="thq-sign-in-3-email"
+                    required="true"
+                    placeholder="*********"
+                    className="forgotpass-textinput thq-input thq-body-large"
+                    onChange={(e) => setOldPassword(e.target.value)}
+                    value={oldPassword}
+                  />
+                  New password
+                  <input
+                    type="password"
+                    id="thq-sign-in-3-email"
+                    required="true"
+                    placeholder="*********"
+                    className="forgotpass-textinput thq-input thq-body-large"
+                    onChange={(e) => setNewPassword(e.target.value)}
+                    value={newPassword}
+                  />
+                </div>
+              </form>
+              <br />
+              <div className="forgotpass-container1">
+                <div
+                  onClick={setPassword}
+                  className="forgotpass-button thq-button-filled"
                 >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="thq-sign-in-3-email"
-                  required="true"
-                  placeholder="Email address"
-                  className="forgotpass-textinput thq-input thq-body-large"
-                />
+                  <span className="forgotpass-text1 thq-body-small">
+                    Send new password
+                  </span>
+                </div>
               </div>
-            </form>
-            <div className="forgotpass-container1">
-              <Link
-                to="/login"
-                autoFocus="true"
-                className="forgotpass-button thq-button-filled"
-              >
-                <span className="forgotpass-text1 thq-body-small">
-                  Send new password
-                </span>
-              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  )
-}
+    </>
+  );
+};
 
 Forgotpass.defaultProps = {
-  text: 'Sign up',
-  rootClassName: '',
-}
+  text: "Sign up",
+  rootClassName: "",
+};
 
 Forgotpass.propTypes = {
   text: PropTypes.string,
   rootClassName: PropTypes.string,
-}
+};
 
-export default Forgotpass
+export default Forgotpass;

@@ -5,6 +5,7 @@ import { Line } from "rc-progress";
 import Navbar from "../components/navbar";
 import Profile from "../components/profile";
 import "./profile1.css";
+import { Footer } from "../components/Footer";
 
 const Profile1 = (props) => {
   return (
@@ -21,90 +22,7 @@ const Profile1 = (props) => {
         <Line percent={10} strokeWidth={4} strokeColor="#D3D3D3" />
       </div>
 
-      <footer className="profile1-footer">
-        <div className="profile1-main">
-          <div className="profile1-branding">
-            <div className="profile1-heading">
-              <h2 className="profile1-logo">SOCIALIZER</h2>
-              <p className="profile1-caption">
-                A platform designed for helping people with autism or people who
-                struggle with emotional recognition to improve this social skill
-              </p>
-            </div>
-          </div>
-          <div className="profile1-links">
-            <div className="profile1-list">
-              <h3 className="profile1-heading1">Site</h3>
-              <div className="profile1-items">
-                <button className="profile1-link button-clean button">
-                  home
-                </button>
-                <button className="profile1-link01 button-clean button">
-                  browse scenarios
-                </button>
-                <button className="profile1-link02 button-clean button">
-                  Tutorial
-                </button>
-                <button className="profile1-link03 button-clean button">
-                  <span>
-                    <span>lessons</span>
-                    <br></br>
-                  </span>
-                </button>
-                <button className="profile1-link04 button-clean button">
-                  profile
-                </button>
-              </div>
-            </div>
-            <div className="profile1-list1">
-              <h3 className="profile1-heading2">Creators</h3>
-              <div className="profile1-items1">
-                <button className="profile1-link05 button-clean button">
-                  name
-                </button>
-                <button className="profile1-link06 button-clean button">
-                  name
-                </button>
-                <button className="profile1-link07 button-clean button">
-                  name
-                </button>
-                <button className="profile1-link08 button-clean button">
-                  name
-                </button>
-                <button className="profile1-link09 button-clean button">
-                  name
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="profile1-socials">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="profile1-twitter social button"
-            >
-              <img
-                alt="image"
-                src="/Icons/twitter.svg"
-                className="profile1-image"
-              />
-            </a>
-            <a
-              href="https://discord.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="profile1-discord social button"
-            >
-              <img
-                alt="image"
-                src="/Icons/discord.svg"
-                className="profile1-image1"
-              />
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       <div>
         <div className="profile1-container2">
           <Script

@@ -53,7 +53,7 @@
   height: 50%;
   align-self: center;
 }
-@media(max-width: 991px) {
+@media (max-width: 991px) {
   .logos6-container2 {
     gap: var(--dl-space-space-oneandhalfunits);
     width: 100%;
@@ -63,12 +63,12 @@
     justify-content: center;
   }
 }
-@media(max-width: 767px) {
+@media (max-width: 767px) {
   .logos6-container2 {
     padding: var(--dl-space-space-twounits);
   }
 }
-@media(max-width: 479px) {
+@media (max-width: 479px) {
   .logos6-container {
     gap: var(--dl-space-space-unit);
   }

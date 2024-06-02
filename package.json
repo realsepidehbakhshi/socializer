@@ -8,6 +8,7 @@
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "dangerous-html": "0.1.13",
+    "force": "^0.0.3",
     "jwt-decode": "^4.0.0",
     "prop-types": "15.7.2",
     "rc-progress": "^4.0.0",
@@ -16,7 +17,9 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-redux": "^7.2.6",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-spinners": "^0.13.8",
+    "some-library": "^1.0.0"
   },
   "scripts": {
     "start": "craco start",

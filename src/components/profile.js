@@ -7,12 +7,23 @@ import { Line } from "rc-progress";
 import "./profile.css";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../redux/slise";
-import { userData } from "../api/user";
+import { getAnswers, userData } from "../api/user";
+import { gameData } from "../lib/data";
 
 const Profile = (props) => {
   const [user, setUser] = useState({});
+  const [progress, setProgress] = useState(0);
+  const calculate = (data) => {
+    gameData.map((item, index) => {
+      if (item.answer === data[index].answer) {
+        setProgress((prev) => prev + 10);
+      }
+    });
+  };
   useEffect(async () => {
     const result2 = await userData();
+    const answers = await getAnswers();
+    calculate(answers);
     if (result2 && result2?.status === 200) {
       setUser(result2?.data);
     }
@@ -78,8 +89,8 @@ const Profile = (props) => {
                 <br className=""></br>
               </p>
               <div className="profile-container10">
-                <span className="profile-text17">70% Progress</span>
-                <Line percent={70} strokeWidth={4} strokeColor="green" />
+                <span className="profile-text17">{progress}% Progress</span>
+                <Line percent={progress} strokeWidth={4} strokeColor="green" />
               </div>
               <div className="profile-container11">
                 <div className="profile-container12"></div>

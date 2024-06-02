@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 
-import Script from 'dangerous-html/react'
-import { Helmet } from 'react-helmet'
+import Script from "dangerous-html/react";
+import { Helmet } from "react-helmet";
 
-import Navbar from '../components/navbar'
-import Lesson from '../components/lesson'
-import './lessons.css'
+import Navbar from "../components/navbar";
+import Lesson from "../components/lesson";
+import "./lessons.css";
+import { Footer } from "../components/Footer";
 
 const Lessons = (props) => {
   return (
@@ -16,90 +17,8 @@ const Lessons = (props) => {
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name6"></Navbar>
       <Lesson rootClassName="lesson-root-class-name"></Lesson>
-      <footer className="lessons-footer">
-        <div className="lessons-main">
-          <div className="lessons-branding">
-            <div className="lessons-heading">
-              <h2 className="lessons-logo">SOCIALIZER</h2>
-              <p className="lessons-caption">
-                A platform designed for helping people with autism or people who
-                struggle with emotional recognition to improve this social skill
-              </p>
-            </div>
-          </div>
-          <div className="lessons-links">
-            <div className="lessons-list">
-              <h3 className="lessons-heading1">Site</h3>
-              <div className="lessons-items">
-                <button className="lessons-link button-clean button">
-                  home
-                </button>
-                <button className="lessons-link01 button-clean button">
-                  browse scenarios
-                </button>
-                <button className="lessons-link02 button-clean button">
-                  Tutorial
-                </button>
-                <button className="lessons-link03 button-clean button">
-                  <span>
-                    <span>lessons</span>
-                    <br></br>
-                  </span>
-                </button>
-                <button className="lessons-link04 button-clean button">
-                  profile
-                </button>
-              </div>
-            </div>
-            <div className="lessons-list1">
-              <h3 className="lessons-heading2">Creators</h3>
-              <div className="lessons-items1">
-                <button className="lessons-link05 button-clean button">
-                  name
-                </button>
-                <button className="lessons-link06 button-clean button">
-                  name
-                </button>
-                <button className="lessons-link07 button-clean button">
-                  name
-                </button>
-                <button className="lessons-link08 button-clean button">
-                  name
-                </button>
-                <button className="lessons-link09 button-clean button">
-                  name
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="lessons-socials">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="lessons-twitter social button"
-            >
-              <img
-                alt="image"
-                src="/Icons/twitter.svg"
-                className="lessons-image"
-              />
-            </a>
-            <a
-              href="https://discord.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="lessons-discord social button"
-            >
-              <img
-                alt="image"
-                src="/Icons/discord.svg"
-                className="lessons-image1"
-              />
-            </a>
-          </div>
-        </div>
-      </footer>
+
+      <Footer />
       <div>
         <div className="lessons-container2">
           <Script
@@ -159,7 +78,7 @@ const Lessons = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Lessons
+export default Lessons;

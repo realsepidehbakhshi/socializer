@@ -9,6 +9,8 @@
   background-image: url("/orange%20minimalist%20modern%20warm%20blur%20gradient%20non%20profit%20presentation-1500w.jpg");
 }
 .tutorial-video {
-  width: 300px;
-  height: 400px;
+  width: 450px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  border-radius: 10px;
 }

@@ -7,9 +7,48 @@ import Navbar from "../components/navbar";
 import Gallery4 from "../components/gallery4";
 import "./game-page.css";
 import { gameData } from "../lib/data";
+import CircleLoader from "react-spinners/CircleLoader";
+import { Footer } from "../components/Footer";
+import { setAnswer } from "../api/user";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+  marginTop: 70,
+  marginBottom: 30,
+};
 
 const GamePage = (props) => {
   const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [showResults, setShowResults] = useState(false);
+  const [asnwers, setAnswers] = useState({});
+  const calculate = () => {
+    if (Object.entries(asnwers).length >= step) {
+      setLoading(true);
+      setTimeout(async () => {
+        await setAnswer({
+          answers: [
+            { questionId: 1, answer: asnwers[1] },
+            { questionId: 2, answer: asnwers[2] },
+            { questionId: 3, answer: asnwers[3] },
+            { questionId: 4, answer: asnwers[4] },
+            { questionId: 5, answer: asnwers[5] },
+            { questionId: 6, answer: asnwers[6] },
+            { questionId: 7, answer: asnwers[7] },
+            { questionId: 8, answer: asnwers[8] },
+            { questionId: 9, answer: asnwers[9] },
+            { questionId: 10, answer: asnwers[10] },
+          ],
+        });
+        setShowResults(true);
+        setLoading(false);
+      }, 3000);
+    } else {
+      alert("Select your answer to continue");
+    }
+  };
   return (
     <div className="game-page-container">
       <Helmet>
@@ -17,148 +56,122 @@ const GamePage = (props) => {
         <meta property="og:title" content="game-page - Socializer" />
       </Helmet>
       <Navbar rootClassName="navbar-root-class-name2"></Navbar>
-      <section className="game-page-hero">
-        <div className="game-page-heading">
-          <p className="game-page-caption">
-            <span>Choose the right emotion</span>
-            <br></br>
-          </p>
-          {step === 1 ? (
-            <Gallery4 data={gameData[0]}></Gallery4>
-          ) : step === 2 ? (
-            <Gallery4 data={gameData[1]}></Gallery4>
-          ) : step === 3 ? (
-            <Gallery4 data={gameData[2]}></Gallery4>
-          ) : step === 4 ? (
-            <Gallery4 data={gameData[3]}></Gallery4>
-          ) : step === 5 ? (
-            <Gallery4 data={gameData[4]}></Gallery4>
-          ) : step === 6 ? (
-            <Gallery4 data={gameData[5]}></Gallery4>
-          ) : step === 7 ? (
-            <Gallery4 data={gameData[6]}></Gallery4>
-          ) : step === 8 ? (
-            <Gallery4 data={gameData[7]}></Gallery4>
-          ) : step === 9 ? (
-            <Gallery4 data={gameData[8]}></Gallery4>
-          ) : (
-            <Gallery4 data={gameData[9]}></Gallery4>
-          )}
-          <div style={{ display: "flex", gap: 10 }}>
-            {step > 1 ? (
-              <div
-                className="gallery4-button thq-button-filled"
-                onClick={() => setStep(step - 1)}
-                style={{ height: 42 }}
-              >
-                <span className="gallery4-text5 thq-body-small">Prevoius</span>
-              </div>
-            ) : (
-              ""
-            )}
-            {step !== 10 ? (
-              <div
-                className="gallery4-button thq-button-filled"
-                onClick={() => setStep(step + 1)}
-                style={{ height: 42 }}
-              >
-                <span className="gallery4-text5 thq-body-small">Next</span>
-              </div>
-            ) : (
-              <div
-                className="gallery4-button thq-button-filled"
-                style={{ height: 42 }}
-              >
-                <span className="gallery4-text5 thq-body-small">Submit</span>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-      <footer className="game-page-footer">
-        <div className="game-page-main">
-          <div className="game-page-branding">
-            <div className="game-page-heading1">
-              <h2 className="game-page-logo">SOCIALIZER</h2>
-              <p className="game-page-caption1">
-                A platform designed for helping people with autism or people who
-                struggle with emotional recognition to improve this social skill
-              </p>
-            </div>
-          </div>
-          <div className="game-page-links">
-            <div className="game-page-list">
-              <h3 className="game-page-heading2">Site</h3>
-              <div className="game-page-items">
-                <button className="game-page-link button-clean button">
-                  home
-                </button>
-                <button className="game-page-link01 button-clean button">
-                  browse scenarios
-                </button>
-                <button className="game-page-link02 button-clean button">
-                  Tutorial
-                </button>
-                <button className="game-page-link03 button-clean button">
-                  <span>
-                    <span>lessons</span>
-                    <br></br>
+
+      {!loading && !showResults && (
+        <section className="game-page-hero">
+          <div className="game-page-heading">
+            <p className="game-page-caption">
+              <span>Choose the right emotion</span>
+              <br></br>
+            </p>
+            {gameData.map((item, index) => {
+              if (step === index + 1) {
+                return (
+                  <Gallery4
+                    key={index}
+                    data={item}
+                    onSelect={(e) => {
+                      const updated_answers = { ...asnwers };
+                      updated_answers[e.id] = e.value;
+                      setAnswers(updated_answers);
+                    }}
+                    currentAnswer={asnwers[item.id]}
+                  />
+                );
+              }
+            })}
+            <div style={{ display: "flex", gap: 10 }}>
+              {step > 1 ? (
+                <div
+                  className="gallery4-button thq-button-filled"
+                  onClick={() => setStep(step - 1)}
+                  style={{ height: 42 }}
+                >
+                  <span className="gallery4-text5 thq-body-small">
+                    Prevoius
                   </span>
-                </button>
-                <button className="game-page-link04 button-clean button">
-                  profile
-                </button>
-              </div>
-            </div>
-            <div className="game-page-list1">
-              <h3 className="game-page-heading3">Creators</h3>
-              <div className="game-page-items1">
-                <button className="game-page-link05 button-clean button">
-                  name
-                </button>
-                <button className="game-page-link06 button-clean button">
-                  name
-                </button>
-                <button className="game-page-link07 button-clean button">
-                  name
-                </button>
-                <button className="game-page-link08 button-clean button">
-                  name
-                </button>
-                <button className="game-page-link09 button-clean button">
-                  name
-                </button>
-              </div>
+                </div>
+              ) : (
+                ""
+              )}
+              {step !== 10 ? (
+                <div
+                  className="gallery4-button thq-button-filled"
+                  onClick={() => {
+                    if (Object.entries(asnwers).length >= step) {
+                      setStep(step + 1);
+                    } else {
+                      alert("Select your answer to continue");
+                    }
+                  }}
+                  style={{ height: 42 }}
+                >
+                  <span className="gallery4-text5 thq-body-small">Next</span>
+                </div>
+              ) : (
+                <div
+                  className="gallery4-button thq-button-filled"
+                  style={{ height: 42 }}
+                  onClick={calculate}
+                >
+                  <span className="gallery4-text5 thq-body-small">Submit</span>
+                </div>
+              )}
             </div>
           </div>
-          <div className="game-page-socials">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="game-page-twitter social button"
-            >
-              <img
-                alt="image"
-                src="/Icons/twitter.svg"
-                className="game-page-image"
-              />
-            </a>
-            <a
-              href="https://discord.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="game-page-discord social button"
-            >
-              <img
-                alt="image"
-                src="/Icons/discord.svg"
-                className="game-page-image1"
-              />
-            </a>
+        </section>
+      )}
+
+      <CircleLoader
+        color={"white"}
+        loading={loading}
+        cssOverride={override}
+        size={200}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+      {loading && (
+        <div style={{ color: "white", marginBottom: 80 }}>Calculating ...</div>
+      )}
+
+      {showResults && (
+        <div className="game-page-hero">
+          <div
+            style={{
+              display: "flex",
+              color: "white",
+
+              marginTop: 40,
+              flexDirection: "column",
+              gap: 25,
+            }}
+          >
+            {gameData.map((item) => {
+              return (
+                <div style={{ display: "flex", gap: 15 }}>
+                  <div style={{ marginRight: 60, width: 400 }}>{item.text}</div>
+                  <div style={{ display: "flex", gap: 15, with: 150 }}>
+                    <div>
+                      Your Asnwer:{" "}
+                      <span
+                        style={{
+                          color:
+                            item.answer === asnwers[item.id] ? "green" : "red",
+                        }}
+                      >
+                        {asnwers[item.id]}
+                      </span>
+                    </div>
+                    <div>Correct Asnwer: {item.answer}</div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
-      </footer>
+      )}
+      <Footer />
+
       <div>
         <div className="game-page-container2">
           <Script
