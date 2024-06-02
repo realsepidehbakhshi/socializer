@@ -17,7 +17,7 @@ const Tutorial = (props) => {
       <Navbar rootClassName="navbar-root-class-name5"></Navbar>
       <TutorialCom
         rootClassName="tutorial-root-class-name"
-        videoSrc={"tot.mp4"}
+        videoSrc={"2024-06-02 17-41-28.mkv"}
       />
       <Footer />
       <div>
